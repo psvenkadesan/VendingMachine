@@ -23,7 +23,7 @@ namespace VendingMachine
             var selectionNum1 = vendingMachine.CoinSelectionRequest();
             //get selected product
             CoinModel coin = vendingMachine.FindAndReturnCoin(selectionNum1);
-            //Calculations
+            //Calculations & Final Result
             PaymentCalculation paymentCalc = new PaymentCalculation();
             var paymentInfo = paymentCalc.ReturnPaymentAndChange(product.Price, coin.Weight);
             vendingMachine.TakePayment(paymentInfo[0], paymentInfo[1], product.Name, coin.Weight, coin.Coin);
